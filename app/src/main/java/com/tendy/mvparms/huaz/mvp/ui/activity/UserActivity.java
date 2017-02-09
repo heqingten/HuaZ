@@ -1,7 +1,6 @@
 package com.tendy.mvparms.huaz.mvp.ui.activity;
 
 import android.content.Intent;
-import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -20,7 +19,6 @@ import com.tendy.mvparms.huaz.mvp.contract.UserContract;
 import com.tendy.mvparms.huaz.mvp.presenter.UserPresenter;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import common.AppComponent;
 import common.WEActivity;
 import me.jessyan.mvparms.demo.R;

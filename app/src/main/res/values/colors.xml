@@ -1,7 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <color name="mm_black">#231f20</color>
+    <color name="mm_58585b">#58585b</color>
+    <color name="mm_424245">#424245</color>
+    <color name="mm_bfbfbf">#bfbfbf</color>
+    <color name="mm_efebe5">#efebe5</color>
+    <color name="mm_e2e5ea">#E2E5EA</color>
+    <color name="mm_888888">#888888</color>
+    <color name="mm_f6f7f7">#F6F7F7</color>
+    <color name="mm_eb5a5a">#eb5a5a</color>
+    <color name="mm_green">#79c14f</color>
+    <color name="mm_gray">#9f9fa0</color>
+    <color name="white">#FFFFFF</color>
+    <color name="transparent">#00000000</color>
+    <color name="half_transparent">#b0000000</color>
+    <color name="gray">#c9c9ca</color>
+    <!-- 统一的标题栏背景色 -->
+    <color name="title_bg">#FFFFFF</color>
+    <!-- 统一的界面背景色 -->
+    <color name="bg_color">#F8F8F8</color>
+    <!-- 白色50%半透明北京 -->
+    <color name="bg_white_trans_color">#e0FFFFFF</color>
+
+    <color name="mm_orange">#dea385</color>
+    <color name="mm_orange_light">#ECCBBA</color>
+
+    <color name="goods_fen">#d59e90</color>
+    <color name="goods_mi_huang">#dac8af</color>
+    <color name="goods_tuo">#71685c</color>
+    <color name="goods_rong_bai">#efebe5</color>
+    <color name="goods_zhong_hui">#848484</color>
+    <color name="goods_zao_hong">#441b1b</color>
+    <color name="goods_da_hong">#ac0202</color>
+    <color name="goods_qian_tuo">#dabc9c</color>
+    <color name="goods_lan">#3a83ad</color>
+    <color name="goods_zhang_lan">#1c2740</color>
+
+
+    <!-- 所有界面中分割线的颜色 -->
+    <color name="line_bg">#EAEBEB</color>
+
+    <!-- WheelView -->
+    <color name="province_line_border">#C7C7C7</color>
+    <!-- 聊天界面的配置 -->
+    <color name="btn_register_normal">#2dafa3</color>
+    <color name="btn_register_pressed">#4ebcd3</color>
+    <color name="btn_gray_normal">#c0c0c0</color>
+    <color name="btn_gray_pressed_status">#b5b5b6</color>
+    <color name="grid_state_pressed">#1Affffff</color>
+    <color name="grid_state_focused">#80000000</color>
+    <color name="voip_interface_text_color">#bababa</color>
+
+
+
+    <!-- 上传图片添加的颜色 -->
+    <color name="none_color">#00000000</color>
+    <color name="plugin_camera_black">#000000</color>
+
+    <!-- 主题 Them   color -->
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
-    <color name="white">#FFFFFF</color>
+
+
 </resources>

@@ -1,8 +1,5 @@
 package com.tendy.mvparms.huaz.mvp.presenter;
 
-import android.app.Application;
-
-import com.jess.arms.base.AppManager;
 import com.jess.arms.base.DefaultAdapter;
 import com.jess.arms.di.scope.ActivityScope;
 import com.jess.arms.mvp.BasePresenter;
@@ -10,13 +7,13 @@ import com.jess.arms.utils.PermissionUtil;
 import com.jess.arms.utils.RxUtils;
 import com.tendy.mvparms.huaz.mvp.contract.UserContract;
 import com.tendy.mvparms.huaz.mvp.model.entity.User;
+import com.tendy.mvparms.huaz.mvp.ui.adapter.UserAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.inject.Inject;
 
-import com.tendy.mvparms.huaz.mvp.ui.adapter.UserAdapter;
 import me.jessyan.rxerrorhandler.core.RxErrorHandler;
 import me.jessyan.rxerrorhandler.handler.ErrorHandleSubscriber;
 import me.jessyan.rxerrorhandler.handler.RetryWithDelay;
@@ -31,8 +28,6 @@ import rx.schedulers.Schedulers;
 @ActivityScope
 public class UserPresenter extends BasePresenter<UserContract.Model, UserContract.View> {
     private RxErrorHandler mErrorHandler;
-    private AppManager mAppManager;
-    private Application mApplication;
     private List<User> mUsers = new ArrayList<>();
     private DefaultAdapter mAdapter;
     private int lastUserId = 1;
@@ -40,12 +35,9 @@ public class UserPresenter extends BasePresenter<UserContract.Model, UserContrac
 
 
     @Inject
-    public UserPresenter(UserContract.Model model, UserContract.View rootView, RxErrorHandler handler
-            , AppManager appManager, Application application) {
+    public UserPresenter(UserContract.Model model, UserContract.View rootView, RxErrorHandler handler) {
         super(model, rootView);
-        this.mApplication = application;
         this.mErrorHandler = handler;
-        this.mAppManager = appManager;
         mAdapter = new UserAdapter(mUsers);
         mRootView.setAdapter(mAdapter);//设置Adapter
     }
@@ -66,7 +58,7 @@ public class UserPresenter extends BasePresenter<UserContract.Model, UserContrac
 
         boolean isEvictCache = pullToRefresh;//是否驱逐缓存,为ture即不使用缓存,每次上拉刷新即需要最新数据,则不使用缓存
 
-        if (pullToRefresh && isFirst){//默认在第一次上拉刷新时使用缓存
+        if (pullToRefresh && isFirst) {//默认在第一次上拉刷新时使用缓存
             isFirst = false;
             isEvictCache = false;
         }
@@ -113,7 +105,5 @@ public class UserPresenter extends BasePresenter<UserContract.Model, UserContrac
         this.mAdapter = null;
         this.mUsers = null;
         this.mErrorHandler = null;
-        this.mAppManager = null;
-        this.mApplication = null;
     }
 }

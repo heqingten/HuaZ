@@ -5,8 +5,11 @@ import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
+
 import com.tendy.mvparms.huaz.mvp.model.api.service.CommonService;
+import com.tendy.mvparms.huaz.mvp.model.api.service.SplashService;
 import com.tendy.mvparms.huaz.mvp.model.api.service.UserService;
+
 import retrofit2.Retrofit;
 
 /**
@@ -25,6 +28,12 @@ public class ServiceModule {
     @Provides
     UserService provideUserService(Retrofit retrofit) {
         return retrofit.create(UserService.class);
+    }
+
+    @Singleton
+    @Provides
+    SplashService provideSplashService(Retrofit retrofit) {
+        return retrofit.create(SplashService.class);
     }
 
 }

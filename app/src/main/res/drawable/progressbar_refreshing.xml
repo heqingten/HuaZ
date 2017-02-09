@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list android:oneshot="false"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:duration="50" android:drawable="@drawable/refreshing_001" />
+    <item android:duration="50" android:drawable="@drawable/refreshing_002" />
+    <item android:duration="50" android:drawable="@drawable/refreshing_003" />
+    <item android:duration="50" android:drawable="@drawable/refreshing_004" />
+    <item android:duration="50" android:drawable="@drawable/refreshing_005" />
+    <item android:duration="50" android:drawable="@drawable/refreshing_006" />
+    <item android:duration="50" android:drawable="@drawable/refreshing_007" />
+    <item android:duration="50" android:drawable="@drawable/refreshing_008" />
+    <item android:duration="50" android:drawable="@drawable/refreshing_009" />
+    <item android:duration="50" android:drawable="@drawable/refreshing_010" />
+    <item android:duration="50" android:drawable="@drawable/refreshing_011" />
+    <item android:duration="50" android:drawable="@drawable/refreshing_012" />
+    <item android:duration="50" android:drawable="@drawable/refreshing_013" />
+    <item android:duration="50" android:drawable="@drawable/refreshing_014" />
+    <item android:duration="50" android:drawable="@drawable/refreshing_015" />
+    <item android:duration="50" android:drawable="@drawable/refreshing_016" />
+    <item android:duration="50" android:drawable="@drawable/refreshing_017" />
+    <item android:duration="50" android:drawable="@drawable/refreshing_018" />
+    <item android:duration="50" android:drawable="@drawable/refreshing_019" />
+    <item android:duration="50" android:drawable="@drawable/refreshing_020" />
+    <item android:duration="50" android:drawable="@drawable/refreshing_021" />
+    <item android:duration="50" android:drawable="@drawable/refreshing_022" />
+    <item android:duration="50" android:drawable="@drawable/refreshing_023" />
+    <item android:duration="50" android:drawable="@drawable/refreshing_024" />
+    <item android:duration="50" android:drawable="@drawable/refreshing_025" />
+    <item android:duration="50" android:drawable="@drawable/refreshing_026" />
+    <item android:duration="50" android:drawable="@drawable/refreshing_027" />
+</animation-list>
