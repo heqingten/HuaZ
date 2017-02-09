@@ -13,7 +13,9 @@ import com.jess.arms.widget.imageloader.glide.GlideImageConfig;
 import butterknife.BindView;
 import me.jessyan.mvparms.demo.R;
 import common.WEApplication;
+
 import com.tendy.mvparms.huaz.mvp.model.entity.User;
+
 import rx.Observable;
 
 /**
@@ -43,10 +45,6 @@ public class UserItemHolder extends BaseHolder<User> {
         Observable.just(data.getLogin())
                 .subscribe(RxTextView.text(mName));
 
-        mImageLoader.loadImage(mApplication, GlideImageConfig
-                .builder()
-                .url(data.getAvatarUrl())
-                .imagerView(mAvater)
-                .build());
+        mImageLoader.loadImage(mApplication, GlideImageConfig.builder().url(data.getAvatarUrl()).imagerView(mAvater).build());
     }
 }

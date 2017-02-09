@@ -1,6 +1,7 @@
 package com.tendy.mvparms.huaz.mvp.ui.activity;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -11,25 +12,25 @@ import android.view.View;
 
 import com.jess.arms.base.DefaultAdapter;
 import com.jess.arms.utils.UiUtils;
-import com.tendy.mvparms.huaz.mvp.contract.UserContract;
 import com.paginate.Paginate;
 import com.tbruyelle.rxpermissions.RxPermissions;
-
-import butterknife.BindView;
-import me.jessyan.mvparms.demo.R;
-import common.AppComponent;
 import com.tendy.mvparms.huaz.di.component.DaggerUserComponent;
 import com.tendy.mvparms.huaz.di.module.UserModule;
+import com.tendy.mvparms.huaz.mvp.contract.UserContract;
 import com.tendy.mvparms.huaz.mvp.presenter.UserPresenter;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import common.AppComponent;
 import common.WEActivity;
+import me.jessyan.mvparms.demo.R;
 import rx.Observable;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.functions.Action1;
 import timber.log.Timber;
 
 
-
-public class UserActivity extends WEActivity<UserPresenter> implements UserContract.View, SwipeRefreshLayout.OnRefreshListener {
+public class UserActivity extends WEActivity<UserPresenter> implements UserContract.View {
 
     @Nullable
     @BindView(R.id.recyclerView)
@@ -63,16 +64,16 @@ public class UserActivity extends WEActivity<UserPresenter> implements UserContr
         mPresenter.requestUsers(true);//打开app时自动加载列表
     }
 
-    @Override
-    public void onRefresh() {
-        mPresenter.requestUsers(true);
-    }
-
     /**
      * 初始化RecycleView
      */
     private void initRecycleView() {
-        mSwipeRefreshLayout.setOnRefreshListener(this);
+        mSwipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                mPresenter.requestUsers(true);
+            }
+        });
         configRecycleView(mRecyclerView, new GridLayoutManager(this, 2));
     }
 
@@ -83,9 +84,7 @@ public class UserActivity extends WEActivity<UserPresenter> implements UserContr
      * @param recyclerView
      * @param layoutManager
      */
-    private void configRecycleView(RecyclerView recyclerView
-            , RecyclerView.LayoutManager layoutManager
-    ) {
+    private void configRecycleView(RecyclerView recyclerView, RecyclerView.LayoutManager layoutManager) {
         recyclerView.setLayoutManager(layoutManager);
         //如果可以确定每个item的高度是固定的，设置这个选项可以提高性能
         recyclerView.setHasFixedSize(true);

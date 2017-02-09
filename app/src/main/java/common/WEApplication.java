@@ -7,17 +7,15 @@ import com.jess.arms.base.BaseApplication;
 import com.jess.arms.di.module.GlobeConfigModule;
 import com.jess.arms.http.GlobeHttpHandler;
 import com.jess.arms.utils.UiUtils;
-import com.squareup.leakcanary.LeakCanary;
-import com.squareup.leakcanary.RefWatcher;
+import com.tendy.mvparms.huaz.di.module.CacheModule;
+import com.tendy.mvparms.huaz.di.module.ServiceModule;
+import com.tendy.mvparms.huaz.mvp.model.api.Api;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import me.jessyan.mvparms.demo.BuildConfig;
-import com.tendy.mvparms.huaz.di.module.CacheModule;
-import com.tendy.mvparms.huaz.di.module.ServiceModule;
-import com.tendy.mvparms.huaz.mvp.model.api.Api;
 import me.jessyan.rxerrorhandler.handler.listener.ResponseErroListener;
 import okhttp3.Interceptor;
 import okhttp3.Request;
@@ -30,7 +28,6 @@ import timber.log.Timber;
  */
 public class WEApplication extends BaseApplication {
     private AppComponent mAppComponent;
-    private RefWatcher mRefWatcher;//leakCanary观察器
 
     @Override
     public void onCreate() {
@@ -49,7 +46,6 @@ public class WEApplication extends BaseApplication {
             Timber.plant(new Timber.DebugTree());
         }
 
-        installLeakCanary();//leakCanary内存泄露检查
     }
 
 
@@ -58,26 +54,6 @@ public class WEApplication extends BaseApplication {
         super.onTerminate();
         if (mAppComponent != null)
             this.mAppComponent = null;
-        if (mRefWatcher != null)
-            this.mRefWatcher = null;
-    }
-
-    /**
-     * 安装leakCanary检测内存泄露
-     */
-    protected void installLeakCanary() {
-        this.mRefWatcher = BuildConfig.USE_CANARY ? LeakCanary.install(this) : RefWatcher.DISABLED;
-    }
-
-    /**
-     * 获得leakCanary观察器
-     *
-     * @param context
-     * @return
-     */
-    public static RefWatcher getRefWatcher(Context context) {
-        WEApplication application = (WEApplication) context.getApplicationContext();
-        return application.mRefWatcher;
     }
 
 

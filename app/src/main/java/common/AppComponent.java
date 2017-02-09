@@ -13,10 +13,12 @@ import com.jess.arms.widget.imageloader.ImageLoader;
 import javax.inject.Singleton;
 
 import dagger.Component;
+
 import com.tendy.mvparms.huaz.di.module.CacheModule;
 import com.tendy.mvparms.huaz.di.module.ServiceModule;
 import com.tendy.mvparms.huaz.mvp.model.api.cache.CacheManager;
 import com.tendy.mvparms.huaz.mvp.model.api.service.ServiceManager;
+
 import me.jessyan.rxerrorhandler.core.RxErrorHandler;
 import okhttp3.OkHttpClient;
 
@@ -24,8 +26,7 @@ import okhttp3.OkHttpClient;
  * Created by jess on 8/4/16.
  */
 @Singleton
-@Component(modules = {AppModule.class, ClientModule.class, ServiceModule.class, ImageModule.class,
-        CacheModule.class, GlobeConfigModule.class})
+@Component(modules = {AppModule.class, ClientModule.class, ServiceModule.class, ImageModule.class, CacheModule.class, GlobeConfigModule.class})
 public interface AppComponent {
     Application Application();
 

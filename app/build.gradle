@@ -58,7 +58,4 @@ dependencies {
     apt rootProject.ext.dependencies["butterknife-apt"]
     compile project(':arms')
     compile rootProject.ext.dependencies["paginate"]
-    debugCompile rootProject.ext.dependencies["canary-debug"]
-    releaseCompile rootProject.ext.dependencies["canary-release"]
-    testCompile rootProject.ext.dependencies["canary-release"]
 }
